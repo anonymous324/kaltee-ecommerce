@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index$ /kalteeNew/index.php [L]
+RewriteRule ^jackets$ /kalteeNew/jackets.php [L]
+# RewriteRule ^product_details$ /kalteeNew/product_details.php [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^product_details/([^/]+)$ product_details.php?product_title=$1 [L,QSA]
